@@ -31,22 +31,15 @@ group :doc do
 end
 
 group :development do
-
   gem 'sqlite3'
 end
 
 group :production do
   gem 'pg'
-  
-end
-
+  # Use unicorn as the app server
   gem 'unicorn'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
+end
+  
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
