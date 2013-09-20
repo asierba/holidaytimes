@@ -1,1 +1,24 @@
-Request
+<h1>book time off</h1>
+
+<%= form_for :post, url: bookings_path do |f| %>
+    <p>
+      <%= f.label :who %><br>
+      <%= f.text_field :who %>
+    </p>
+
+    <p>
+      <%= f.label :from %><br>
+      <%= f.date_select :from %>
+    </p>
+
+    <p>
+      <%= f.label :to %><br>
+      <%= f.date_select  :to %>
+    </p>
+
+    <p>
+      <%= f.submit 'book it!' %>
+    </p>
+<% end %>
+
+<%= link_to 'Back', bookings_path %>
