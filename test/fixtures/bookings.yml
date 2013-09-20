@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  who: MyString
+  from: 2013-09-20
+  to: 2013-09-20
+
+two:
+  who: MyString
+  from: 2013-09-20
+  to: 2013-09-20
