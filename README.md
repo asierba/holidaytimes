@@ -4,6 +4,7 @@ holidaytimes
 web app to book your holidays
 
 [![Build Status](https://travis-ci.org/asierba/holidaytimes.png?branch=master)](https://travis-ci.org/asierba/holidaytimes)
+[![Coverage Status](https://coveralls.io/repos/asierba/holidaytimes/badge.png)](https://coveralls.io/r/asierba/holidaytimes)
 
 Quickstart
 ----------
