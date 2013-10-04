@@ -19,6 +19,6 @@ class BookingsController < ApplicationController
 
   private
     def booking_params
-      params.require(:post).permit(:who, :from, :to)
+      params.require(:booking).permit(:who, :from, :to)
     end
 end
