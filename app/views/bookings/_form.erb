@@ -1,8 +1,8 @@
 <%= form_for :booking, url: bookings_path do |f| %>
     <% if @booking.errors.any? %>
         <div id="errorExplanation">
-          <h2><%= pluralize(@booking.errors.count, "error") %> prohibited
-            this booking from being saved:</h2>
+          <h3><%= pluralize(@booking.errors.count, "error") %> prohibited
+            this booking from being saved:</h3>
           <ul>
             <% @booking.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
@@ -10,22 +10,17 @@
           </ul>
         </div>
     <% end %>
-    <p>
+    <div class="form-group">
       <%= f.label :who %><br>
-      <%= f.text_field :who %>
-    </p>
-
-    <p>
+      <%= f.text_field :who, :class => "form-control" %>
+    </div>
+    <div class="form-group">
       <%= f.label :from %><br>
-      <%= f.date_select :from %>
-    </p>
-
-    <p>
+      <%= f.text_field :from, :class => "form-control from" %>
+    </div>
+    <div class="form-group">
       <%= f.label :to %><br>
-      <%= f.date_select  :to %>
-    </p>
-
-    <p>
-      <%= f.submit 'book it!' %>
-    </p>
+      <%= f.text_field  :to, :class => "form-control to" %>
+    </div>
+    <%= f.submit 'book it!', :class => "btn btn-default" %>
 <% end %>
