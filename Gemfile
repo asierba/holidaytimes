@@ -42,6 +42,6 @@ end
 # For code coverage analysis
 gem 'coveralls', require: false
 
-
+# Jquery and Jquery ui for javascript
 gem "jquery-rails"
-
+gem 'jquery-ui-rails'
