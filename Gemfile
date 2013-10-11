@@ -40,3 +40,7 @@ group :production do
 end
 
 gem 'coveralls', require: false
+
+gem 'ZenTest', '~>4.5'
+
+gem 'autotest-rails'
