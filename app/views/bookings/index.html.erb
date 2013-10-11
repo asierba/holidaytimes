@@ -6,6 +6,7 @@
     <th>who</th>
     <th>from</th>
     <th>to</th>
+    <th>Actions</th>
   </tr>
 
   <% @bookings.each do |booking| %>
@@ -13,8 +14,8 @@
         <td><%= booking.who %></td>
         <td><%= booking.from %></td>
         <td><%= booking.to %></td>
-        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-        <td><%= link_to 'Delete', booking_path(booking),
+        <td><%= link_to 'Edit', edit_booking_path(booking) %> |
+          <%= link_to 'Delete', booking_path(booking),
                         method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
   <% end %>

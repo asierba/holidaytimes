@@ -1,7 +1,12 @@
 Bookmeoff::Application.routes.draw do
-  root 'bookings#index'
+  root 'users#index'
 
-  resources :bookings
+
+  resources :users do
+    resources :bookings
+  end
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
