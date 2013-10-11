@@ -43,6 +43,7 @@ GEM
       thor
     erubis (2.7.0)
     execjs (2.0.1)
+    hashie (2.0.5)
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.1)
@@ -59,6 +60,9 @@ GEM
     mime-types (1.24)
     minitest (4.7.5)
     multi_json (1.7.9)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
     pg (0.16.0)
     pg (0.16.0-x86-mingw32)
     polyglot (0.3.3)
@@ -137,6 +141,7 @@ DEPENDENCIES
   coveralls
   jbuilder (~> 1.2)
   jquery-rails
+  omniauth (~> 1.1.4)
   pg
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
