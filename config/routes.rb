@@ -1,10 +1,10 @@
 Bookmeoff::Application.routes.draw do
-  root 'users#index'
+  root 'bookings#index'
 
 
-  resources :users do
-    resources :bookings
-  end
+  resources :users, :bookings
+
+
 
 
 
