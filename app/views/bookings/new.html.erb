@@ -1,35 +1,5 @@
 <h1>book time off</h1>
 
-<%= form_for :booking, url: bookings_path do |f| %>
-    <% if @booking.errors.any? %>
-        <div id="errorExplanation">
-          <h2><%= pluralize(@booking.errors.count, "error") %> prohibited
-            this booking from being saved:</h2>
-          <ul>
-            <% @booking.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-    <p>
-      <%= f.label :who %><br>
-      <%= f.text_field :who %>
-    </p>
-
-    <p>
-      <%= f.label :from %><br>
-      <%= f.date_select :from %>
-    </p>
-
-    <p>
-      <%= f.label :to %><br>
-      <%= f.date_select  :to %>
-    </p>
-
-    <p>
-      <%= f.submit 'book it!' %>
-    </p>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back', bookings_path %>
