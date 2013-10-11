@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @booking = Booking.new
   end
 
   def show
@@ -13,8 +14,11 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
 
-    @booking.save
-    redirect_to @booking
+    if @booking.save
+      redirect_to @booking
+    else
+      render 'new'
+    end
   end
 
   def edit

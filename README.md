@@ -18,3 +18,6 @@ rake db:migrate
 3. To run the web server
 rails s
 
+Others
+------
+For development database administration download [SQLite admin](http://sqliteadmin.orbmu2k.de/)
