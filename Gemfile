@@ -42,3 +42,4 @@ end
 gem 'coveralls', require: false
 
 gem 'omniauth', '~> 1.1.4'
+gem 'omniauth-ldap'
