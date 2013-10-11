@@ -39,8 +39,9 @@ group :production do
   gem 'unicorn'
 end
 
+# For code coverage analysis
 gem 'coveralls', require: false
 
-gem 'ZenTest', '~>4.5'
-
-gem 'autotest-rails'
+# Jquery and Jquery ui for javascript
+gem "jquery-rails"
+gem 'jquery-ui-rails'
