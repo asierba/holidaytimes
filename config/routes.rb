@@ -3,6 +3,9 @@ Bookmeoff::Application.routes.draw do
 
   resources :bookings
 
+  post 'auth/:provider/callback' => 'auth#success'
+  get 'auth/logout'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
