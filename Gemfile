@@ -45,3 +45,6 @@ gem 'coveralls', require: false
 # Jquery and Jquery ui for javascript
 gem "jquery-rails"
 gem 'jquery-ui-rails'
+
+gem 'omniauth', '~> 1.1.4'
+gem 'omniauth-ldap'
