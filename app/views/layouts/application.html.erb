@@ -9,7 +9,16 @@
 </head>
 <body>
 <div class="container">
-    <%= yield %>
+<div>
+  <% if current_user %>
+  Welcome, <strong><%= current_user.name %></strong>! <%= link_to "Not you?", "auth/logout" %>
+  <% else %>
+  <%= link_to "Sign in", "/auth/ldap" %>
+  <% end %>
+</div>
+
+<%= yield %>
+
 </div>
 </body>
 </html>
