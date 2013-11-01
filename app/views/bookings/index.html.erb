@@ -16,8 +16,13 @@
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
         <td><%= link_to 'Delete', booking_path(booking),
                         method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Approve',  'bookings/approve/%d' % booking.id,
+                      method: :patch, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
   <% end %>
 </table>
 
 <%= link_to 'Request time off', new_booking_path %>
+

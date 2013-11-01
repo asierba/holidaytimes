@@ -28,10 +28,19 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
 
-    if @booking.update(params[:booking].permit(:who, :from, :to))
+    if @booking.update(params[:booking].permit(:who, :from, :to, :approved))
       redirect_to @booking
     else
       render 'edit'
+    end
+  end
+
+  def approve
+    @booking = Booking.find(params[:id])
+    @booking.approved = true
+
+    if @booking.save
+      redirect_to bookings_path
     end
   end
 
