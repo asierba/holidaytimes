@@ -3,6 +3,8 @@ Bookmeoff::Application.routes.draw do
 
   resources :bookings
 
+  patch 'bookings/approve/:id' => 'bookings#approve'
+
   post 'auth/:provider/callback' => 'auth#success'
   get 'auth/logout'
 
