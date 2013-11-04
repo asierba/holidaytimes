@@ -1,7 +1,36 @@
-<h1>Book holidays!</h1>
-<p>This is the calendar</p>
+<div ng-app>
+  <div ng-controller="CalendarCtrl">
 
-<table border="1">
+    <h1>{{month()}} {{year}}</h1>
+
+    <button ng-click="goToPreviousMonth()" class="btn btn-default"> &lt;&lt; Previous</button>
+    <button ng-click="goToNextMonth()" class="btn btn-default">Next &gt;&gt;</button>
+
+    <div id="calendar-header">
+      <div>Monday</div>
+      <div>Tuesday</div>
+      <div>Wednesday</div>
+      <div>Thursday</div>
+      <div>Friday</div>
+      <div>Saturday</div>
+      <div>Sunday</div>
+    </div>
+
+    <div class="clear"></div>
+
+
+    <div ng-repeat="day in days">
+      <div class="day" ng-class="{'not-this-month': day.isNotThisMonth}">
+        <span>{{day.value}}</span>
+      </div>
+      <div ng-hide="($index+1) % 7" class="clear"></div>
+    </div>
+
+  </div>
+</div>
+
+
+<table style="visibility: collapse" border="1">
   <tr>
     <th>who</th>
     <th>from</th>
@@ -21,3 +50,8 @@
 </table>
 
 <%= link_to 'Request time off', new_booking_path %>
+
+<script>
+
+
+</script>
