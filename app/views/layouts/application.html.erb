@@ -9,13 +9,13 @@
 </head>
 <body>
 <div class="container">
-<div>
-  <% if current_user %>
-  Welcome, <strong><%= current_user.name %></strong>! <%= link_to "Not you?", "auth/logout" %>
-  <% else %>
-  <%= link_to "Sign in", "/auth/ldap" %>
-  <% end %>
-</div>
+    <div id="user">
+      <% if current_user %>
+        Welcome, <strong><%= current_user.name %></strong>! <%= link_to "Not you?", "auth/logout" %>
+      <% else %>
+          <span class="glyphicon glyphicon-lock"></span> <%= link_to "Sign in", "/auth/ldap" %>
+      <% end %>
+    </div>
 
 <%= yield %>
 
