@@ -13,3 +13,8 @@
  *= require bootstrap
  *= require jquery.ui.all
  */
+
+#container {
+    width: 500px;
+}
+
