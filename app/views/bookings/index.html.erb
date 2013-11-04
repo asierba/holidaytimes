@@ -22,9 +22,13 @@
     <div ng-repeat="day in days">
       <div class="day" ng-class="{'not-this-month': day.isNotThisMonth}">
         <span>{{day.value}}</span>
+        <div ng-repeat="booking in day.bookings">
+          <span>{{booking}}</span>
+        </div>
       </div>
       <div ng-hide="($index+1) % 7" class="clear"></div>
     </div>
+
 
   </div>
 </div>
