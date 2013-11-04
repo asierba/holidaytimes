@@ -6,6 +6,8 @@ Bookmeoff::Application.routes.draw do
   post 'auth/:provider/callback' => 'auth#success'
   get 'auth/logout'
 
+  mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
