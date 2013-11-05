@@ -1,5 +1,4 @@
-<h1>Book holidays!</h1>
-<p>This is the calendar</p>
+<h1>Approvals</h1>
 
 <table border="1">
   <tr>
@@ -17,12 +16,9 @@
         <td><%= link_to 'Delete', booking_path(booking),
                         method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td>
-          <%= link_to 'Approve', 'bookings/approve/%d' % booking.id,
+          <%= link_to 'Approve', 'approvals/approve/%d' % booking.id,
                       method: :patch, data: { confirm: 'Are you sure?' } %>
         </td>
       </tr>
   <% end %>
 </table>
-
-<%= link_to 'Request time off', new_booking_path %>
-

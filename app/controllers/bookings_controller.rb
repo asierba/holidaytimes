@@ -35,15 +35,6 @@ class BookingsController < ApplicationController
     end
   end
 
-  def approve
-    @booking = Booking.find(params[:id])
-    @booking.approved = true
-
-    if @booking.save
-      redirect_to bookings_path
-    end
-  end
-
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
