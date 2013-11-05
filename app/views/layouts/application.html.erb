@@ -26,6 +26,7 @@
         </li>
       </ul>
       <ul id="user" class="nav navbar-nav navbar-right">
+        <% if HasAuthProvider %>
         <li>
             <% if current_user %>
                 Welcome, <strong><%= current_user.name %></strong>! <%= link_to "Not you?", "auth/logout" %>
@@ -33,6 +34,7 @@
               <a href="/auth/ldap"><i class="glyphicon glyphicon-lock"></i>&nbsp;Sign in</a>
             <% end %>
         </li>
+        <% end %>
       </ul>
   </div>
 
