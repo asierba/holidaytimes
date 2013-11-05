@@ -1,12 +1,12 @@
 OmniAuth.config.logger = Rails.logger
 
-HasAuthProvider = false
+$has_auth_provider = false
 
-@LdapConfigPath = "#{Rails.root}/config/ldap.yml"
+@ldapConfigPath = "#{Rails.root}/config/ldap.yml"
 
-if File.exists?(@LdapConfigPath)
+if File.exists?(@ldapConfigPath)
 
-  LDAPConfig = YAML.load(File.open(@LdapConfigPath))
+  LDAPConfig = YAML.load(File.open(@ldapConfigPath))
 
   if LDAPConfig != nil && LDAPConfig['ldap']['enabled']
     Bookmeoff::Application.config.middleware.use OmniAuth::Builder do
@@ -20,7 +20,7 @@ if File.exists?(@LdapConfigPath)
                :password => LDAPConfig['ldap']['password']
     end
 
-    HasAuthProvider = true
+    $has_auth_provider = true
   end
 
 end
