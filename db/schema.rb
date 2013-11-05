@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131101174420) do
+ActiveRecord::Schema.define(version: 20131105173935) do
 
   create_table "bookings", force: true do |t|
     t.string   "who"
@@ -20,14 +20,10 @@ ActiveRecord::Schema.define(version: 20131101174420) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "approved"
+    t.integer  "user_id"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "uid"
-    t.string   "provider"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "users" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end
