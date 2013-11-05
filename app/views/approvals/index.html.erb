@@ -1,0 +1,27 @@
+<h1>Approvals</h1>
+
+<table border="1">
+  <tr>
+    <th>User</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th>Approve</th>
+  </tr>
+
+  <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.who %></td>
+        <td><%= booking.from %></td>
+        <td><%= booking.to %></td>
+        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+        <td><%= link_to 'Delete', booking_path(booking),
+                        method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Approve', 'approvals/approve/%d' % booking.id,
+                      method: :patch, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+  <% end %>
+</table>

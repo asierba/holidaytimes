@@ -48,3 +48,8 @@ gem 'jquery-ui-rails'
 
 gem 'omniauth', '~> 1.1.4'
 gem 'omniauth-ldap'
+
+gem 'angularjs-rails'
+group :test, :development do
+  gem 'jasmine-rails'
+end
