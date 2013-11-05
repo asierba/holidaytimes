@@ -1,7 +1,7 @@
 namespace 'configuration' do
 
   def copy_config_file(sourceDir, destinationDir)
-    if File.exists(destinationDir)
+    if File.exists?(destinationDir)
       raise 'Config file "%s" already exists' % destinationDir
     else
       FileUtils.cp(sourceDir, destinationDir)
