@@ -10,13 +10,18 @@ web app to book your holidays
 Quickstart
 ----------
 1. To install all the required libraries (and not the ones that only work on the server!)
-bundle install --without production
+    -   bundle install --without production
 
 2. To setup the DB
-rake db:migrate
+    -   rake db:migrate
 
 3. To run the web server
-rails s
+    -   rails s
+
+Configuration
+-------------
+- To generate a configuration file for LDAP authentication provider
+    -   rake configuration:generate\_ldap\_config
 
 Others
 ------
