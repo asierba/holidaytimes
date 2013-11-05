@@ -1,4 +1,4 @@
-<div ng-app>
+<div ng-app style="display: none">
   <div ng-controller="CalendarCtrl">
     <h1>{{month()}} {{year}}</h1>
 
@@ -33,11 +33,13 @@
 </div>
 
 
-<table style="visibility: collapse" border="1">
+<table border="1">
   <tr>
-    <th>who</th>
-    <th>from</th>
-    <th>to</th>
+    <th>User</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
 
   <% @bookings.each do |booking| %>
