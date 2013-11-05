@@ -28,7 +28,9 @@
       <ul id="user" class="nav navbar-nav navbar-right">
         <li>
             <% if current_user %>
-                Welcome, <strong><%= current_user.name %></strong>! <%= link_to "Not you?", "auth/logout" %>
+                <!--Welcome, <strong><%= current_user.name %></strong>!-->
+              Welcome, <strong><%= link_to current_user.name, 'users/show/%d' % current_user.id %></strong>!
+                  <%= link_to "Not you?", "auth/logout" %>
             <% else %>
               <a href="/auth/ldap"><i class="glyphicon glyphicon-lock"></i>&nbsp;Sign in</a>
             <% end %>
