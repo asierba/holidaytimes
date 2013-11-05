@@ -1,6 +1,6 @@
 class ApprovalsController < ApplicationController
   def index
-    @bookings = Booking.where("approved = '0'")
+    @bookings = Booking.where(approved: false)
   end
 
   def approve

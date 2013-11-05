@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(approved: true)
   end
 
   def new
@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.approved = false
 
     if @booking.save
       redirect_to @booking
@@ -28,7 +29,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
 
-    if @booking.update(params[:booking].permit(:who, :from, :to, :approved))
+    if @booking.update(params[:booking].permit(:who, :from, :to))
       redirect_to @booking
     else
       render 'edit'
