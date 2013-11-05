@@ -1,3 +1,35 @@
-// Place all the styles related to the booking controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#calendar-header {
+  font-weight: bold;
+}
+
+#calendar-header div {
+  float: left;
+  width: 100px;
+  margin-top: 30px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.day {
+  float: left;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  background-color: white;
+  padding: 5px;
+  margin: 1px;
+}
+
+.not-this-month {
+  color: grey;
+  background-color: lightgrey;
+}
+
+.event {
+  background-color: green;
+  height: 70px;
+}
+
+.clear {
+  clear:both;
+}
