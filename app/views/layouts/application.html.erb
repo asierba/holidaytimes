@@ -26,7 +26,7 @@
         </li>
       </ul>
       <ul id="user" class="nav navbar-nav navbar-right">
-        <% if HasAuthProvider %>
+        <% if $has_auth_provider %>
         <li>
             <% if current_user %>
                 Welcome, <strong><%= current_user.name %></strong>! <%= link_to "Not you?", "auth/logout" %>
