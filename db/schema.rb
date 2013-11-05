@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131018150545) do
+ActiveRecord::Schema.define(version: 20131101174420) do
 
   create_table "bookings", force: true do |t|
     t.string   "who"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131018150545) do
     t.date     "to"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "approved"
   end
 
   create_table "users", force: true do |t|
