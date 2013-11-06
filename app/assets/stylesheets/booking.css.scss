@@ -1,13 +1,17 @@
-#calendar-header {
+#calendar #calendar-header {
   font-weight: bold;
 }
 
-#calendar-header div {
+#calendar #calendar-header div {
   float: left;
   width: 100px;
   margin-top: 30px;
   font-size: 16px;
   text-align: center;
+}
+
+#calendar button {
+  width: 130px;
 }
 
 .day {
