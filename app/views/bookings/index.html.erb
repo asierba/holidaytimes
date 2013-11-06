@@ -32,16 +32,16 @@
   </div>
 </div>
 
-
-<table border="1">
-  <tr>
+<table class="table table-bordered table-striped">
+  <thead>
     <th>User</th>
     <th>From</th>
     <th>To</th>
     <th>Edit</th>
     <th>Delete</th>
-  </tr>
+  </thead>
 
+  <tbody class="list">
   <% @bookings.each do |booking| %>
       <tr>
         <td><%= booking.who %></td>
@@ -52,6 +52,7 @@
                         method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
   <% end %>
+  </tbody>
 </table>
 
 <%= link_to 'Request time off', new_booking_path %>
