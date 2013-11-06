@@ -15,7 +15,6 @@ class BookingsController < ApplicationController
     @user = current_user
     @booking = Booking.new(booking_params)
     @booking.approved = false
-    @booking.who = @user.name
 
     @user.bookings << @booking
     if @user.save
@@ -32,7 +31,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
 
-    if @booking.update(params[:booking].permit(:who, :from, :to))
+    if @booking.update(params[:booking].permit( :from, :to))
       redirect_to @booking
     else
       render 'edit'
@@ -47,6 +46,6 @@ class BookingsController < ApplicationController
   end
   private
     def booking_params
-      params.require(:booking).permit(:who, :from, :to)
+      params.require(:booking).permit( :from, :to)
     end
 end
