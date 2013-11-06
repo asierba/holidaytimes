@@ -6,4 +6,20 @@
 
 <p>
   <Strong>Requested Holidays</Strong>
+<table border="1">
+  <tr>
+    <th>User</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Approve</th>
+  </tr>
+  <% @user.bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.who %></td>
+        <td><%= booking.from %></td>
+        <td><%= booking.to %></td>
+        <td><%= booking.approved %></td>
+      </tr>
+  <% end %>
+</table>
 </p>
