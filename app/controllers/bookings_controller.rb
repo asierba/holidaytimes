@@ -12,23 +12,17 @@ class BookingsController < ApplicationController
   end
 
   def create
-
+    @user = current_user
     @booking = Booking.new(booking_params)
     @booking.approved = false
-    @user = current_user
+    @booking.who = @user.name
+
     @user.bookings << @booking
     if @user.save
       redirect_to @booking
     else
       render 'new'
     end
-
-
-    #if @booking.save
-    #  redirect_to @booking
-    #else
-    #  render 'new'
-    #end
   end
 
   def edit
