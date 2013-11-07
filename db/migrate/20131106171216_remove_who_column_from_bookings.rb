@@ -1,7 +1,7 @@
 class RemoveWhoColumnFromBookings < ActiveRecord::Migration
   def change
-    alter_table :bookings do |t|
-      t.remove_column :who
+    change_table :bookings do |t|
+      t.remove :who
     end
   end
 end
