@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h1>Holidays Requested</h1>
+</div>
+
+<p>
+  <Strong>Requested Holidays</Strong>
+<table class="table table-bordered table-striped">
+  <thead>
+    <th>User</th>
+    <th>From</th>
+    <th>To</th>
+    <th>Approved</th>
+  </thead>
+  <tbody class="list">
+  <% @user.bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.who %></td>
+        <td><%= booking.from %></td>
+        <td><%= booking.to %></td>
+        <td><%= booking.approved %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+</p>

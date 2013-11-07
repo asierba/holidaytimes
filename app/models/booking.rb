@@ -1,5 +1,4 @@
 class Booking < ActiveRecord::Base
-  validates :who, presence: true,length: { minimum: 5 }
   validates :from, presence: true
   validates :to, presence: true
 
@@ -9,4 +8,5 @@ class Booking < ActiveRecord::Base
     errors.add(:from, 'must be earlier than to') if
         from != nil && to != nil && from > to
   end
+  belongs_to :user
 end
