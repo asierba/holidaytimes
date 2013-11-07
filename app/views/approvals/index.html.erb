@@ -1,16 +1,16 @@
-<table border="1">
-  <tr>
+<table class="table table-bordered table-striped">
+  <thead>
     <th>User</th>
     <th>From</th>
     <th>To</th>
     <th>Edit</th>
     <th>Delete</th>
     <th>Approve</th>
-  </tr>
+  </thead>
 
   <% @bookings.each do |booking| %>
       <tr>
-        <td><%= booking.who %></td>
+        <td><%= booking.user.name %></td>
         <td><%= booking.from %></td>
         <td><%= booking.to %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
