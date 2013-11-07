@@ -34,6 +34,7 @@
 
 <table class="table table-bordered table-striped">
   <thead>
+    <th>User</th>
     <th>From</th>
     <th>To</th>
     <th>Edit</th>
@@ -43,6 +44,7 @@
   <tbody class="list">
   <% @bookings.each do |booking| %>
       <tr>
+        <td><%= booking.user.name %></td>
         <td><%= booking.from %></td>
         <td><%= booking.to %></td>
         <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
