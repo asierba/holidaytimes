@@ -26,6 +26,7 @@
         </li>
       </ul>
       <ul id="user" class="nav navbar-nav navbar-right">
+        <% if $has_auth_provider %>
         <li>
             <% if current_user %>
               Welcome, <strong><%= link_to current_user.name, '/users/show/%d' % current_user.id %></strong>!
@@ -34,6 +35,7 @@
               <a href="/auth/ldap"><i class="glyphicon glyphicon-lock"></i>&nbsp;Sign in</a>
             <% end %>
         </li>
+        <% end %>
       </ul>
   </div>
 
