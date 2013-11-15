@@ -20,7 +20,7 @@ Quickstart
 
 Configuration
 -------------
-- To generate a configuration file for LDAP authentication provider
+- To generate a configuration file for LDAP authentication provider (you must then add your active directory settings to ~/config/ldap.yml)
     -   rake configuration:generate\_ldap\_config
 
 Others
