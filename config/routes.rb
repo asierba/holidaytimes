@@ -8,6 +8,7 @@ Bookmeoff::Application.routes.draw do
 
   post 'auth/:provider/callback' => 'auth#success'
   get 'auth/logout'
+  get 'auth/new'
 
   get 'users/show/:id' => 'users#show'
 
