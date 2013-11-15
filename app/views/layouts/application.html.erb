@@ -20,13 +20,13 @@
   </div>
 
   <div class="collapse navbar-collapse" id="navbar-collapsable">
-      <ul class="nav navbar-nav navbar-left">
-        <li>
-          <a href="/approvals">Approvals</a>
-        </li>
-      </ul>
     <% if $has_auth_provider %>
       <% if current_user %>
+        <ul class="nav navbar-nav navbar-left">
+          <li>
+            <a href="/approvals">Approvals</a>
+          </li>
+        </ul>
         <p class="nav navbar-text navbar-right">Welcome, <strong><%= link_to current_user.name, '/users/show/%d' % current_user.id %></strong>! <%= link_to "Not you?", "/auth/logout" %></p>
       <% else %>
           <ul id="user" class="nav navbar-nav navbar-right">
