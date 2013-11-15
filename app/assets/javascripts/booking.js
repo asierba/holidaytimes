@@ -91,7 +91,7 @@ function CalendarCtrl($scope) {
             start_day = 1;
         }
 
-        if(end_month > monthIndex) {
+        if (end_month > monthIndex) {
             end_day = numOfDaysThisMonth;
         }
 
@@ -102,7 +102,7 @@ function CalendarCtrl($scope) {
             }
 
             $scope.$apply(function () {
-                day.bookings.push(booking.who);
+                day.bookings.push({id: booking.id, who: booking.who.substring(0,10)});
             } );
         }
     }
