@@ -1,0 +1,15 @@
+
+<div class="jumbotron">
+  <h1>Book Holidays</h1>
+  <% if $has_auth_provider %>
+    <p>Welcome to the holiday application, a place to manage employee holidays.</p>
+    <p><a class="btn btn-primary btn-lg" role="button" href="/auth/ldap">Sign in</a></p>
+  <% else %>
+    <p>Note for developers: you need to set up an authentication provider before you can use the app.</p>
+      <small>
+        <p>1. To set up for active directory run <code>rake configuration:generate_ldap_config</code>.</p>
+        <p>2. The rake will generate a template file at <code>~/config/ldap.yml</code>.</p>
+        <p>3. Edit the template file, replacing the values with your domain settings.</p>
+      </small>
+  <% end %>
+</div>
