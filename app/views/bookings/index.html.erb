@@ -55,7 +55,9 @@
   </tbody>
 </table>
 
-<%= link_to 'Request time off', new_booking_path %>
+<% if current_user %>
+    <%= link_to 'Request time off', new_booking_path %>
+<% end %>
 
 <script>
 
