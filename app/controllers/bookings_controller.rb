@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.where "\"from\" BETWEEN :start_date AND :end_date OR \"to\" BETWEEN :start_date AND :end_date ",
                               {:start_date => params[:start], :end_date => params[:finish]}
 
-    render :json => @bookings
+    render :json => @bookings.as_json(:include => :user)
   end
 
   def new

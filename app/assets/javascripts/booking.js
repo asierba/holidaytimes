@@ -103,7 +103,7 @@ function calendarController($scope) {
             }
 
             $scope.$apply(function () {
-                day.bookings.push({id: booking.id, who: booking.who.substring(0, 10)});
+                day.bookings.push({id: booking.id, who: booking.user.name.substring(0, 10)});
             });
         }
     }
