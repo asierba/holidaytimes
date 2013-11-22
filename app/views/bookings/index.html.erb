@@ -1,4 +1,10 @@
 <div ng-app>
+  <div>
+    <div class="form-group pull-right">
+      <%= link_to 'Request time off', new_booking_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+
   <div ng-controller="calendarController" id="calendar" >
     <h1>{{month()}} {{year}}</h1>
 

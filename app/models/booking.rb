@@ -8,5 +8,6 @@ class Booking < ActiveRecord::Base
     errors.add(:from, 'must be earlier than to') if
         from != nil && to != nil && from > to
   end
-  belongs_to :user
+  belongs_to :user, :class_name => 'User',
+             :foreign_key => 'user_id'
 end
