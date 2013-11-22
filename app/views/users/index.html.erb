@@ -1,0 +1,27 @@
+
+<div class="users-index" ng-controller="usersControl">
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <th>Username</th>
+      <th>Managed By</th>
+    </thead>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td>
+        <div class="current-manager">
+          <% if(user.managed_by_user_id == nil) %>
+              <a href='#'>Nobody</a>
+          <% else %>
+              <%= user.manager %> <a href='#' data-user='<%= user.id %>'>Change</a>
+          <% end %>
+        </div>
+        <div class="change-manager" data-user='<%= user.id %>'>
+
+        </div>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

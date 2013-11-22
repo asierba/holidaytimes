@@ -11,6 +11,7 @@ Bookmeoff::Application.routes.draw do
   get 'auth/new'
 
   get 'users/show/:id' => 'users#show'
+  get 'users' => 'users#index'
 
   mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
 

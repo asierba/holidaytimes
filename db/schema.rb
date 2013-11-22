@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106171216) do
+ActiveRecord::Schema.define(version: 20131122152018) do
 
   create_table "bookings", force: true do |t|
     t.date     "from"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20131106171216) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "managed_by_user_id"
   end
 
 end

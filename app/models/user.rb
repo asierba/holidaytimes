@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  belongs_to :manager, :class_name => 'User',
+             :foreign_key => 'user_managed_by_id'
 
   has_many :bookings
 
