@@ -7,7 +7,7 @@ $(function () {
     $('.to').datepicker({dateFormat: 'yy-mm-dd'});
 });
 
-function CalendarCtrl($scope) {
+function calendarController($scope) {
     "use strict";
 
     var monthIndex = 0,
@@ -124,7 +124,11 @@ function CalendarCtrl($scope) {
             type: 'GET',
             dataType: 'json',
             contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-            url: '/bookings/range?start=' +  $scope.year + '-' + thisMonth + '-01&finish=' +  $scope.year + '-' + thisMonth + '-' + numOfDaysThisMonth,
+            url: '/bookings/range',
+            data: {
+                start: $scope.year + '-' + thisMonth + '-01',
+                finish: $scope.year + '-' + thisMonth + '-' + numOfDaysThisMonth
+            },
             success: drawOnCalendar
         });
     }
