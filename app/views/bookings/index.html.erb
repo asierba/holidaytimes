@@ -1,16 +1,14 @@
-
-<div>
-  <div class="form-group pull-right">
-    <%= link_to 'Request time off', new_booking_path, class: 'btn btn-primary' %>
-  </div>
-</div>
-
-<div ng-app style="display: none">
-  <div ng-controller="CalendarCtrl">
+<div ng-app>
+  <div ng-controller="calendarController" id="calendar" >
     <h1>{{month()}} {{year}}</h1>
 
-    <button ng-click="goToPreviousMonth()" class="btn btn-default"> &lt;&lt; Previous</button>
-    <button ng-click="goToNextMonth()" class="btn btn-default">Next &gt;&gt;</button>
+    <button ng-click="goToPreviousMonth()" class="btn btn-default">
+      <span class="glyphicon glyphicon-chevron-left"></span> Previous
+    </button>
+
+    <button ng-click="goToNextMonth()" class="btn btn-default">
+      Next <span class="glyphicon glyphicon-chevron-right"></span>
+    </button>
 
     <div id="calendar-header">
       <div>Monday</div>
@@ -24,40 +22,15 @@
 
     <div class="clear"></div>
 
-
     <div ng-repeat="day in days">
       <div class="day" ng-class="{'not-this-month': day.isNotThisMonth}">
         <span>{{day.value}}</span>
-        <ul ng-repeat="booking in day.bookings" class="list-unstyled">
-          <li>{{booking}}</li>
+        <ul class="list-unstyled">
+          <li ng-repeat="booking in day.bookings"><span class="label label-primary"><a href="/bookings/{{booking.id}}">{{booking.who}}</a></span></li>
         </ul>
       </div>
       <div ng-hide="($index+1) % 7" class="clear"></div>
     </div>
 
-
   </div>
 </div>
-
-<table class="table table-bordered table-striped">
-  <thead>
-    <th>User</th>
-    <th>From</th>
-    <th>To</th>
-    <th>Edit</th>
-    <th>Delete</th>
-  </thead>
-
-  <tbody class="list">
-  <% @bookings.each do |booking| %>
-      <tr>
-        <td><%= booking.user.name %></td>
-        <td><%= booking.from %></td>
-        <td><%= booking.to %></td>
-        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
-        <td><%= link_to 'Delete', booking_path(booking),
-                        method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
