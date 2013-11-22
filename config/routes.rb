@@ -1,7 +1,10 @@
 Bookmeoff::Application.routes.draw do
   root 'bookings#index'
 
+  get 'bookings/range', to: 'bookings#range'
   resources :bookings
+
+
 
   get 'approvals' => 'approvals#index'
   patch 'approvals/approve/:id' => 'approvals#approve'
