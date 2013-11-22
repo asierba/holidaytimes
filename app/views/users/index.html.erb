@@ -6,22 +6,21 @@
       <th>Username</th>
       <th>Managed By</th>
     </thead>
-    <% @users.each do |user| %>
-    <tr>
-      <td><%= user.name %></td>
+    <tr ng-repeat="user in users">
+      <td>{{user.name}}</td>
       <td>
         <div class="current-manager">
-          <% if(user.managed_by_user_id == nil) %>
+          <div ng-if="user.hasManager">
               <a href='#'>Nobody</a>
-          <% else %>
-              <%= user.manager %> <a href='#' data-user='<%= user.id %>'>Change</a>
-          <% end %>
+          </div>
+          <div ng-if="!user.hasManager">
+              {{user.manager}} <a href='#'>Change</a>
+          </div>
         </div>
-        <div class="change-manager" data-user='<%= user.id %>'>
-
+        <div class="change-manager">
+          <input type="text" ng-model="" />
         </div>
       </td>
     </tr>
-    <% end %>
   </table>
 </div>
