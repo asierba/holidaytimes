@@ -1,4 +1,4 @@
-/*global $ */
+/*global $, utils */
 
 $(function () {
     "use strict";
@@ -78,14 +78,15 @@ function CalendarCtrl($scope) {
         var start_day = new Date(booking.from).getUTCDate(),
             end_day = new Date(booking.to).getUTCDate(),
             start_month = new Date(booking.from).getMonth(),
-            end_month = new Date(booking.to).getMonth();
-
-        var firstDayOfMonth = new Date($scope.year, monthIndex, 1, 0, 0, 0, 0),
+            end_month = new Date(booking.to).getMonth(),
+            firstDayOfMonth = new Date($scope.year, monthIndex, 1, 0, 0, 0, 0),
             firstDayOfMonthIndex = firstDayOfMonth.getDay() === 0 ? 7 : firstDayOfMonth.getDay(),
             previousMonth = monthIndex === 0 ? 11 : monthIndex - 1,
             numOfDaysPreviousMonth = numbeOfDaysInMonth(previousMonth),
             numOfDaysThisMonth = numbeOfDaysInMonth(monthIndex),
-            mondayPreviousMonth = numOfDaysPreviousMonth - firstDayOfMonthIndex + 2;
+            mondayPreviousMonth = numOfDaysPreviousMonth - firstDayOfMonthIndex + 2,
+            i = 0,
+            day;
 
         if (start_month < monthIndex) {
             start_day = 1;
@@ -95,15 +96,15 @@ function CalendarCtrl($scope) {
             end_day = numOfDaysThisMonth;
         }
 
-        for (var i = start_day; i <= end_day; i++) {
-            var day = $scope.days[i + numOfDaysPreviousMonth - mondayPreviousMonth];
-            if(day.bookings === undefined) {
+        for (i = start_day; i <= end_day; i++) {
+            day = $scope.days[i + numOfDaysPreviousMonth - mondayPreviousMonth];
+            if (day.bookings === undefined) {
                 day.bookings = [];
             }
 
             $scope.$apply(function () {
-                day.bookings.push({id: booking.id, who: booking.who.substring(0,10)});
-            } );
+                day.bookings.push({id: booking.id, who: booking.who.substring(0, 10)});
+            });
         }
     }
 
@@ -117,7 +118,7 @@ function CalendarCtrl($scope) {
             .concat(createDaysNextMonth());
 
         var numOfDaysThisMonth = numbeOfDaysInMonth(monthIndex),
-            thisMonth = utils.zeroFill(monthIndex + 1,2);
+            thisMonth = utils.zeroFill(monthIndex + 1, 2);
 
         $.ajax({
             type: 'GET',
